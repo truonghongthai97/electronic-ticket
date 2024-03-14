@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Upload and Preview</title>
+    <style>
+      body {
+        zoom: 75%;
+      }
+      .text {
+        position: absolute;
+        top: 457px;
+        left: 359px;
+        font-size: 22px;
+        font-family: Arial;
+        background-color: white;
+        padding: 0 3px;
+        rotate: -1deg;
+        color: #242424;
+        letter-spacing: 0.5px;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div style="margin-bottom: 50px">
+      <label for="text">Nhập ngày: </label>
+      <input type="text" id="myInput"/>
+    </div>
+    
+    <p id="text" class="text">01/01/2024</p>
+    <img
+      id="imagePreview"
+      src="./template.jpeg"
+      style="max-width: 100%; width: 650px"
+    />
+
+    <script>
+      var inputElement = document.getElementById('myInput');
+      var textElement = document.getElementById('text');
+
+// Add an event listener for the 'change' event
+inputElement.addEventListener('change', function(event) {
+    // Get the updated value from the input element
+    var updatedValue = event.target.value;
+    
+    // Do something with the updated value
+    console.log("Input value changed to: " + updatedValue);
+    textElement.innerHTML = updatedValue;
+});
+    </script>
+  </body>
+</html>
